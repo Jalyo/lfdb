@@ -1,0 +1,44 @@
+#sidebar
+{
+	background-color: #445878;
+	display: flex;
+    flex-direction: column;
+}
+
+#sidebar .logo
+{
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	border: none;
+	z-index: 1;
+}
+
+#sidebar .logo img
+{
+	width: 100%;
+}
+
+#sidebar > .inner
+{
+
+}
+
+#sidebar nav a:before {
+	background: #445878;
+}
+
+#sidebar nav a:after {
+	background-image: -moz-linear-gradient(to right, #EEEFF7, #EEEFF7);
+	background-image: -webkit-linear-gradient(to right, #EEEFF7, #EEEFF7);
+	background-image: -ms-linear-gradient(to right, #EEEFF7, #EEEFF7);
+	background-image: linear-gradient(to right, #EEEFF7, #EEEFF7);
+}
+
+.wrapper.style1
+{
+	background-color: #EEEFF7;
+	background-image: url('images/fond1_reworked.jpg');
+	background-size: cover;
+}
