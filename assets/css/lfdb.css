@@ -36,10 +36,57 @@
 	background-image: linear-gradient(to right, #EEEFF7, #EEEFF7);
 }
 
-.wrapper.style1
+.block
+{
+	padding: 40px;
+    background-color: rgba(28, 29, 33, 0.76);
+	max-width: 1000px;
+}
+
+.block .title
+{
+    font-variant: small-caps;
+    font-size: 30px;
+    color: #EEEFF7;
+}
+
+.block .text
+{
+	color: #EEEFF7;
+}
+
+#intro
 {
 	background-color: #EEEFF7;
 	background-image: url('images/fond1_reworked.jpg');
+	background-size: cover;
+}
+
+#news
+{
+	background-color: #EEEFF7;
+	background-image: url('images/news_bg.jpg');
+	background-size: cover;
+}
+
+#who
+{
+	background-color: #EEEFF7;
+	background-image: url('images/who_bg.jpg');
+	background-size: cover;
+}
+
+#clubs
+{
+	background-color: #EEEFF7;
+	background-image: url('images/clubs_bg.jpg');
+	background-size: cover;
+}
+
+#contact
+{
+	background-color: #EEEFF7;
+	background-image: url('images/contact_bg.jpg');
 	background-size: cover;
 }
 
