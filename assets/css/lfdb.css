@@ -83,6 +83,12 @@
 	background-size: cover;
 }
 
+#clubs .map
+{
+	text-align: center;
+	margin-top: 20px;
+}
+
 #contact
 {
 	background-color: #EEEFF7;

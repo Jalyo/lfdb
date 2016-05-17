@@ -14,6 +14,22 @@
 		<link rel="stylesheet" href="assets/css/lfdb.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<script type="text/javascript">
+			var iframes = $('iframe');
+
+			$('#clubs').click(function() {
+			    iframes.attr('src', function() {
+			        return $(this).data('src');
+			    });
+			});
+
+			iframes.attr('data-src', function() {
+			    var src = $(this).attr('src');
+			    $(this).removeAttr('src');
+			    return src;
+			});
+
+		</script>
 	</head>
 	<body>
 
@@ -78,7 +94,9 @@
 						<div class="inner">
 							<div class="block">
 							    <div class="title">Les clubs en Bretagne</div>
-								<div class="club1"></div>
+							    <div class="map">
+							    	<iframe src="https://www.google.com/maps/d/u/0/embed?mid=16kpAH94bqWZRQxuZErSq4ub62xs" width="800" height="600"></iframe>
+							    </div>
 							</div>
 						</div>
 					</section>
