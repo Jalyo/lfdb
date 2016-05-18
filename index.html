@@ -14,22 +14,15 @@
 		<link rel="stylesheet" href="assets/css/lfdb.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<script type="text/javascript">
-			var iframes = $('iframe');
 
-			$('#clubs').click(function() {
-			    iframes.attr('src', function() {
-			        return $(this).data('src');
-			    });
-			});
-
-			iframes.attr('data-src', function() {
-			    var src = $(this).attr('src');
-			    $(this).removeAttr('src');
-			    return src;
-			});
-
-		</script>
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+		<script src="assets/js/main.js"></script>
 	</head>
 	<body>
 
@@ -43,6 +36,56 @@
 		  fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));</script>
 
+		<script type="text/javascript">
+
+			$(document).ready(function()
+			{
+
+				function isScrolledIntoView($elem)
+				{
+				    var $window = $(window);
+
+				    var docViewTop = $window.scrollTop();
+				    var docViewBottom = docViewTop + $window.height();
+
+				    var elemTop = $elem.offset().top;
+				    var elemBottom = elemTop + $elem.height();
+
+				    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+				}
+
+				function showMe($elem)
+				{
+					$elem.attr('src', function() {
+				        return $(this).data('src');
+				    });
+				}
+
+				$(document).scroll(function()
+				{
+					var $e = $('iframe#clubs_map');
+
+					if(isScrolledIntoView($e))
+					{
+						showMe($e);
+					}
+				});
+
+				var iframes = $('iframe');
+
+				$('.button_club').click(function() {
+					
+				});
+
+				iframes.attr('data-src', function() {
+				    var src = $(this).attr('src');
+				    $(this).removeAttr('src');
+				    return src;
+				});
+			});
+
+		</script>
+
 		<!-- Sidebar -->
 			<section id="sidebar">
 				<a class="logo" href="#intro">
@@ -53,7 +96,7 @@
 						<ul>
 							<li><a href="#news">Actualités</a></li>
 							<li><a href="#who">Qui sommes-nous ?</a></li>
-							<li><a href="#clubs">Les clubs</a></li>
+							<li><a href="#clubs" class="button_club">Les clubs</a></li>
 							<li><a href="#contact">Contact</a></li>
 						</ul>
 					</nav>
@@ -95,7 +138,7 @@
 							<div class="block">
 							    <div class="title">Les clubs en Bretagne</div>
 							    <div class="map">
-							    	<iframe src="https://www.google.com/maps/d/u/0/embed?mid=16kpAH94bqWZRQxuZErSq4ub62xs" width="800" height="600"></iframe>
+							    	<iframe id="clubs_map" data-src="https://www.google.com/maps/d/u/0/embed?mid=16kpAH94bqWZRQxuZErSq4ub62xs" width="800" height="600"></iframe>
 							    </div>
 							</div>
 						</div>
@@ -121,14 +164,7 @@
 				</div>
 			</footer>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+		
 
 	</body>
 </html>
