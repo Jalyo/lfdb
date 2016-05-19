@@ -82,6 +82,16 @@
 				    $(this).removeAttr('src');
 				    return src;
 				});
+
+				var current = document.location.href.split('#')[1];
+				$('body').addClass(current);
+
+				$('#sidebar ul li').click(function()
+				{
+					$('body').removeClass(current);
+					current = $(this).attr('class');
+					$('body').addClass(current);
+				});
 			});
 
 		</script>
@@ -94,10 +104,10 @@
 				<div class="inner">
 					<nav>
 						<ul>
-							<li><a href="#news">Actualités</a></li>
-							<li><a href="#who">Qui sommes-nous ?</a></li>
-							<li><a href="#clubs" class="button_club">Les clubs</a></li>
-							<li><a href="#contact">Contact</a></li>
+							<li class="news"><a href="#news">Actualités</a></li>
+							<li class="who"><a href="#who">Qui sommes-nous ?</a></li>
+							<li class="clubs"><a href="#clubs" class="button_club">Les clubs</a></li>
+							<li class="contact"><a href="#contact">Contact</a></li>
 						</ul>
 					</nav>
 				</div>
