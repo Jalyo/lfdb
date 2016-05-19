@@ -60,6 +60,7 @@
 	background-color: #EEEFF7;
 	background-image: url('images/fond1_reworked.jpg');
 	background-size: cover;
+	background-position: center;
 }
 
 #news
@@ -67,6 +68,7 @@
 	background-color: #EEEFF7;
 	background-image: url('images/news_bg.jpg');
 	background-size: cover;
+	background-position: center;
 }
 
 #who
@@ -74,6 +76,7 @@
 	background-color: #EEEFF7;
 	background-image: url('images/who_bg.jpg');
 	background-size: cover;
+	background-position: center;
 }
 
 #clubs
@@ -81,6 +84,7 @@
 	background-color: #EEEFF7;
 	background-image: url('images/clubs_bg.jpg');
 	background-size: cover;
+	background-position: center;
 }
 
 #clubs .map
@@ -98,6 +102,32 @@
 
 @media screen and (max-width: 1280px) {
 	#sidebar .logo
+	{
+		display: none;
+	}
+
+	#news .inner
+	{
+		text-align: center;
+	}
+
+	.block
+	{
+		margin: auto;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	#intro
+	{
+		min-height: calc(100vh);
+	}
+}
+
+
+
+@media screen and (max-width: 600px) {
+	#sidebar
 	{
 		display: none;
 	}
